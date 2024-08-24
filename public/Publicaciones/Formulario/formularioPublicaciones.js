@@ -1,3 +1,5 @@
+/*Funciones para formulario para crear publicaciones*/
+
 function crearPublicacion() {
     // Valores inputs
     const nombre = document.getElementById('nombreUsuario').value;
@@ -56,3 +58,6 @@ function crearPublicacion() {
 document.getElementById('iconAddPicture').addEventListener('click', function() {
     document.getElementById('fileInput').click();
 });
+
+/*Terminan funciones para formulario para crear publicaciones*/
+

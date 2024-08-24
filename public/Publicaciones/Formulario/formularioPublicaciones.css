@@ -6,6 +6,9 @@
 *Mauve: #D5ADFB   
 *Folly: #F90052
 */
+
+/*Estilos de formulario para crear publicaciones*/
+
 .container{
     max-width: 800px;
 }
@@ -80,3 +83,6 @@
 .fi:hover {
     color: #F90052; /* Color que deseas aplicar al pasar el cursor */
 }
+
+/*Terminan estilos de formulario para crear publicaciones*/
+
