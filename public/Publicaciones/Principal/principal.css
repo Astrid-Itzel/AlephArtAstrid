@@ -78,7 +78,7 @@ body {
 /*Terminan estilos de formulario para crear publicaciones*/
 
 /*Estilos cards*/
-#card-container {
+#card-container-cards {
   display: flex;
   flex-direction: column; /* Disposición vertical */
   gap: 20px; /* Espacio entre las tarjetas */

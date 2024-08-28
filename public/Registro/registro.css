@@ -90,9 +90,6 @@ h3 {
   #imagen {
     display: none;
   }
-  #imagenPreguntas{
-    display:none;
-  }
 
 }
 
@@ -124,3 +121,13 @@ h3 {
     padding-bottom: 7px;
 }
 
+/*mensajes de error dentro del mismo formulario*/
+.error-message{
+  font-size: small;
+}
+
+/*footer*/
+footer {
+  text-align: center;
+  color: #133072;
+}
