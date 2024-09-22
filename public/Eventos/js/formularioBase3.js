@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const newEventForm = document.querySelector('#formularioEvento');
     
+
     // Verificar si estamos editando un evento existente
     if (!newEventForm) {
         console.error('El formulario con id "formularioEvento" no se encuentra en el DOM.');
         return;
     }
+
 
     const urlParams = new URLSearchParams(window.location.search);
     const eventId = urlParams.get('id');
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('inputImg').click();
         });
 
+        /*
         document.getElementById('inputImg').addEventListener('change', function() {
             const files = document.getElementById('inputImg').files;
             if (files.length > 0) {
@@ -30,6 +33,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('inputImg').value = '';
             }
         });
+        */
+
+    document.getElementById('inputImg').addEventListener('change', function() {
+    const files = this.files;
+    if (files.length > 0) {
+        const file = files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = function() {
+            const base64data = reader.result; // Aquí tienes la imagen en Base64
+            document.getElementById('portada').src = base64data;
+
+            // Guarda la URL Base64 en el objeto item
+            item.image = base64data;
+
+            // Limpia el input
+            document.getElementById('inputImg').value = '';
+        };
+
+        reader.readAsDataURL(file); // Lee el archivo como una URL de datos
+    }
+});
+    
+
+
+
+
 
     newEventForm.addEventListener('submit', function(event) {
         console.log('Formulario enviado');

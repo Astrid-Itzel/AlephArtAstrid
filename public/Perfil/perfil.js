@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    llamarDesdeLocalStorage();
     // Seleccionar elementos
     const editButtons = document.querySelectorAll('.botonEditar');
     const botonConfigurar = document.getElementById('boton-configurar');
@@ -153,8 +154,16 @@ function llamarDesdeLocalStorage() {
         document.getElementById('imagenDePerfil').src = data.imagenPerfil;
         document.getElementById('ImagenBannerDePerfil').src = data.imagenBanner;
         document.getElementById('imagen-proyecto-reciente').src = data.imagenProyecto;
+    
+        // Recuperar y mostrar el nombre del usuario
+        const nombre = localStorage.getItem('userName') || 'Nombre Anónimo';
+        const apellido = localStorage.getItem('userLastName') || '';
+        const nombreCompleto = `${nombre} ${apellido}`.trim();
+        // Asigna el nombre completo al elemento correspondiente
+        document.getElementById('nombreArtista').textContent = nombreCompleto;
     }
 }
+
 
 //Funcion para cargar las publicaciones del usuario en la galeria
 function loadPosts() {

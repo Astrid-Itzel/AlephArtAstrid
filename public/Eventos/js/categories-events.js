@@ -1,20 +1,15 @@
-// Variables globales
 const eventContainer = document.getElementById('eventContainer');
-let allEvents = []; // Añadida esta variable para tomarla en la función de filtrado
+let allEvents = [];
 
-// Event Listener para cargar los eventos al inicio
 document.addEventListener('DOMContentLoaded', loadEventsFromLocalStorage);
 
-// Funciones de carga y creación de cards de eventos
 function loadEventsFromLocalStorage() {
     const storedEvents = localStorage.getItem('eventos');
     allEvents = storedEvents ? JSON.parse(storedEvents) : [];
-    
-    // Ordenamos los eventos por fecha antes de renderizarlos
-    const sortedEvents = sortEventsByDate(allEvents);
-    renderEvents(sortedEvents);  // Renderizamos los eventos ordenados
-}
 
+    const sortedEvents = sortEventsByDate(allEvents);
+    renderEvents(sortedEvents);
+}
 function formatEventData(event) {
     const eventDate = new Date(event.fecha + 'T00:00:00'); // Convierte la fecha a objeto y asegura que la fecha se interprete correctamente
         
